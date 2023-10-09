@@ -1,4 +1,5 @@
 package org.example;
+
 public class Cats {
     String id;
     String text;
