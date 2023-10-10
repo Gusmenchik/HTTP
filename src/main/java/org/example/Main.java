@@ -29,6 +29,7 @@ public class Main {
         List<Cats> catFacts = mapper.readValue(body, mapper.getTypeFactory().constructCollectionType(ArrayList.class, Cats.class));
         List<Cats> output = catFacts.stream()
                 .filter(fact -> fact.getUpvotes() != null)
+                .filter(fact -> fact.getUpvotes() != 0)
                 .collect(Collectors.toList());
         for (Cats fact : output) {
             System.out.println(fact.toString());
